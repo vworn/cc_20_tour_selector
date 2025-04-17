@@ -1,0 +1,108 @@
+:root {
+  /* --- Typography --- */
+  --font-sans: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --base-line-height: 1.5;
+  --base-font-weight: 400;
+
+  /* --- Spacing & Sizing --- */
+  --radius: 0.5rem;
+  --transition-speed: 0.2s;
+
+  /* --- Colors (light defaults) --- */
+  --bg: #ffffff;
+  --text: #213547;
+  --link: #646cff;
+  --link-hover: #747bff;
+  --button-bg: #f9f9f9;
+  --button-text: var(--text);
+
+  /* --- Dark‐mode overrides --- */
+  --bg-dark: #242424;
+  --text-dark: rgba(255, 255, 255, 0.87);
+  --button-bg-dark: #1a1a1a;
+}
+
+/* Automatically switch variables based on user preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: var(--bg-dark);
+    --text: var(--text-dark);
+    --button-bg: var(--button-bg-dark);
+    --link-hover: #535bf2;
+  }
+}
+
+/* ============================================
+   Global Resets & Base Styles
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  line-height: var(--base-line-height);
+  font-weight: var(--base-font-weight);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ============================================
+   Typography & Links
+   ============================================ */
+h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+}
+
+a {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover,
+a:focus {
+  color: var(--link-hover);
+}
+
+/* ============================================
+   Buttons
+   ============================================ */
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  transition: border-color var(--transition-speed);
+}
+
+button:hover {
+  border-color: var(--link);
+}
+
+button:focus {
+  outline: 4px auto -webkit-focus-ring-color;
+  outline-offset: 2px;
+}

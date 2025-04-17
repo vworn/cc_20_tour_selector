@@ -1,0 +1,93 @@
+:root {
+  /* Container */
+  --max-width: 1280px;
+  --spacing: 2rem;
+
+  /* Logo */
+  --logo-size: 6rem;
+  --logo-padding: 1.5rem;
+  --logo-transition: 300ms;
+  --primary-glow: #646cffaa;
+  --react-glow: #61dafbaa;
+
+  /* Card */
+  --card-padding: 2rem;
+
+  /* Typography */
+  --text-muted: #888;
+}
+
+/* ============================================
+   Global Box Sizing
+   ============================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ============================================
+   Layout Utilities
+   ============================================ */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--spacing);
+  text-align: center;
+}
+
+/* ============================================
+   Logo Styles
+   ============================================ */
+.logo {
+  display: inline-block;
+  height: var(--logo-size);
+  padding: var(--logo-padding);
+  transition: filter var(--logo-transition);
+  will-change: filter;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em var(--primary-glow));
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em var(--react-glow));
+}
+
+/* Spin animation for the React logo */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Spin only the second logo (React) */
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ============================================
+   Card Styles
+   ============================================ */
+.card {
+  padding: var(--card-padding);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  margin: var(--spacing) auto;
+  max-width: 600px;
+}
+
+/* ============================================
+   Utility Typography
+   ============================================ */
+.read-the-docs {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
