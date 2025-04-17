@@ -20,3 +20,5 @@ export default function Gallery({ tours = [], loading, error, onRemove, onRefres
     </section>
   );
 }
+
+//render filtered TourCard list and display loading & error messages
