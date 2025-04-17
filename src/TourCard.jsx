@@ -18,3 +18,5 @@ export default function TourCard({ tour, onRemove }) {
     </article>
   );
 }
+
+//display tour details and add “Not Interested” button to remove a tour
