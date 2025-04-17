@@ -60,6 +60,8 @@ export default function App() {
         onRemove={handleRemoveTour}
         onRefresh={fetchTours}
       />
-    </main>
-  );
-}
+        </main>
+      );
+    }
+
+    //fetch tours via useEffect, manage tours/loading/error state and pass props to children
