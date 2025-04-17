@@ -20,3 +20,5 @@ export default function DestinationSelector({ options, value, onChange }) {
     </div>
   );
 }
+
+//build controlled dropdown of unique tour names and lift selection to App
